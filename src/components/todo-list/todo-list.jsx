@@ -13,7 +13,14 @@ export const TodoList = (props) => {
   };
 
   const toggleCheck = (id) => {
-    // Function to toggle task
+    const updatedTodos = todos.map((todo)=>{
+      if(todo.id===id){
+          todo.checked = true;
+          return todo;
+      }
+      return todo;
+    })
+    setTodos(updatedTodos);
   };
 
   const handleKeyUp = (e, id) => {
