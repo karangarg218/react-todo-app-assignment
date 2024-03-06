@@ -6,7 +6,10 @@ export const TodoList = (props) => {
   const { todos, setTodos } = props;
 
   const handleDelete = (id) => {
-    // Function to delete task
+    const filtered = todos.filter((item)=>{
+      return item.id!==id
+    })
+    setTodos(filtered);
   };
 
   const toggleCheck = (id) => {
@@ -26,6 +29,7 @@ export const TodoList = (props) => {
         <div className="todo-list-content">
           {todos.map((todoItem) => (
             <Checkbox
+              id={todoItem.id}
               key={todoItem.id}
               label={todoItem.label}
               checked={todoItem.checked}
