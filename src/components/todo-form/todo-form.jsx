@@ -6,6 +6,10 @@ export const TodoForm = (props) => {
   const [task, setTask] = React.useState("");
 
   const handleAddTodo = () => {
+    if (task.trim() === "") {
+      alert("Task cannot be empty!");
+      return;
+    }
       const idStore = todos.length;
       
       setTodos([...todos,{
@@ -26,7 +30,7 @@ export const TodoForm = (props) => {
 
   return (
     <div className="todo-form">
-      <input placeholder="Enter new task" value={task} onChange={(e) => setTask(e.target.value)} onKeyUp={handleKeyUp} />
+      <input placeholder="Enter new task" value={task} onChange={(e) =>{ setTask(e.target.value)}} onKeyUp={handleKeyUp} />
       <button type="button" onClick={handleAddTodo}>
         Add task
       </button>
