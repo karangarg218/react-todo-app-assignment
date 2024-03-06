@@ -15,7 +15,7 @@ export const TodoForm = (props) => {
 
       }]);
 
-      console.log(todos)
+      setTask("");
   };
 
   const handleKeyUp = (e) => {

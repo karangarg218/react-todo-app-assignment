@@ -15,7 +15,7 @@ export const TodoList = (props) => {
   const toggleCheck = (id) => {
     const updatedTodos = todos.map((todo)=>{
       if(todo.id===id){
-          todo.checked = true;
+          todo.checked = todo.checked == false ? true:false;
           return todo;
       }
       return todo;
