@@ -8,7 +8,7 @@ export const Checkbox = ({
     <div
       tabIndex="0"
       role="checkbox"
-      aria-checked
+      aria-checked={checked ? 'true' : 'false'} // Set aria-checked explicitly
       className="checkbox-content"
       onClick={onClick}
       onKeyUp={onKeyUp}
